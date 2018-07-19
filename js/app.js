@@ -37,12 +37,18 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-    // constructor
-
-    // properties
-      // x pos
-      // y pos
-      // sprite images
+// Player character constructor
+class Character {
+  constructor(){
+    this.x = 0;   // x pos
+    this.y = 0;   // y pos
+    this.sprite = 'images/char-boy.png';    // sprite image
+  }
+  // draw player sprite on current x & y positions
+  render() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  }
+}
 
     // methods
       // update postion
@@ -50,8 +56,7 @@ Enemy.prototype.render = function() {
           // did sprite x & y collide with enemy?
         // reach the end of game
             // did sprite x & y reach final tile
-      // render
-        // draw player sprite on current x & y coord pos
+
       //handle keyboard input
         //update sprites x & y according to input
       // reset player sprite
@@ -61,10 +66,10 @@ Enemy.prototype.render = function() {
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+const player = new Character();   // Player character object
 
     // init allEnemies array
-    // for each enemy create and push new enemy object into above array 
+    // for each enemy create and push new enemy object into above array
 
 
 
