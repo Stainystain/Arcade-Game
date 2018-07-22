@@ -5,7 +5,7 @@
 * [Description](#description)
 * [Features](#features)
 * [Instructions](#instructions)
-* [Run the Application](#Run the Application)
+* [Run the Application](#application)
 
 ## Description
 
@@ -33,4 +33,3 @@ The object of the game is to direct the character over a road to the river witho
 Play the game online -  [Live Preview](https://stainystain.github.io/Arcade-Game/)
 
 Download or clone the repository from Github - git clone https://github.com/Stainystain/Arcade-Game.git
-
