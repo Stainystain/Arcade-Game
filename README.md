@@ -1,6 +1,28 @@
-frontend-nanodegree-arcade-game
-===============================
+# Classic Arcade Game / Frogger
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Description](#description)
+* [Features](#features)
+* [Instructions](#instructions)
+
+## Description
+
+A basic browser based arcade game built with vanilla javascript, html & css.
+A project completed for Udacity's Front-End Web Developer Nanodegree Program (Google Scholarship).
+
+[Live Preview](https://stainystain.github.io/Arcade-Game/)
+
+
+## Features
+
+- Moveable user character
+- Moving enemies
+- Collision detection
+- Collision & end game restart
+
+
+## Instructions
+
+The object of the game is to direct the character over a road to the river without hitting any of the enemies.  If you navigate the enemies and get to the river, you win.  If you hit an enemy the game is reset.
+
