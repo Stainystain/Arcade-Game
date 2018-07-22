@@ -5,7 +5,7 @@
 * [Description](#description)
 * [Features](#features)
 * [Instructions](#instructions)
-* [Run the Application](#application)
+* [Application](#application)
 
 ## Description
 
@@ -28,7 +28,7 @@ A project completed for Udacity's Front-End Web Developer Nanodegree Program (Go
 The object of the game is to direct the character over a road to the river without hitting any of the enemies.  If you navigate the enemies and get to the river, you win.  If you hit an enemy the game is reset.
 
 
-## Run the application
+## Application
 
 Play the game online -  [Live Preview](https://stainystain.github.io/Arcade-Game/)
 
