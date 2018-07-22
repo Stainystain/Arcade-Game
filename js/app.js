@@ -40,13 +40,43 @@ Enemy.prototype.render = function() {
 // Player character constructor
 class Character {
   constructor(){
-    this.x = 0;   // x pos
-    this.y = 0;   // y pos
     this.sprite = 'images/char-boy.png';    // sprite image
+    this.vertical = 83;   // distance moved each step up / down
+    this.horizontal = 101;    // distance moved each step left / right
+    this.startY = (this.vertical * 5) - 40;
+    this.startX = this.horizontal * 2;
+    this.x = this.startX;   // x pos
+    this.y = this.startY;   // y pos
   }
   // draw player sprite on current x & y positions
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  }
+  //update sprites x & y according to input
+  //@param {string} input - direction to travel
+  handleInput(input) {
+    switch(input){
+      case 'left':
+        if (this.x > 0) {
+           this.x -= this.horizontal;
+        }
+        break;
+      case 'right':
+        if (this.x < this.horizontal * 4) {
+           this.x += this.horizontal;
+        }
+        break;
+      case 'up':
+        if (this.y > 0) {
+          this.y -= this.vertical;
+        }
+        break;
+      case 'down':
+      if (this.y < this.vertical * 4) {
+        this.y += this.vertical;
+      }
+        break;
+    }
   }
 }
 
