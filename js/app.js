@@ -2,7 +2,7 @@
 var Enemy = function(x, y, speed) {
     this.sprite = 'images/enemy-bug.png';   // sprite image
     this.x = x;   // x pos
-    this.y = y + 50;   // y pos
+    this.y = y + 40;   // y pos
     this.horizontal = 101;    // distance moved each step right
     this.speed = speed;
     this.startPos = -101;   // enemy start position
@@ -45,7 +45,7 @@ class Character {
     this.sprite = 'images/char-boy.png';    // sprite image
     this.vertical = 83;   // distance moved each step up / down
     this.horizontal = 101;    // distance moved each step left / right
-    this.startY = (this.vertical * 5) - 40;
+    this.startY = (this.vertical * 4) + 40;
     this.startX = this.horizontal * 2;
     this.x = this.startX;   // x pos
     this.y = this.startY;   // y pos
@@ -79,20 +79,31 @@ class Character {
         break;
     }
   }
-}
-
     // methods
       // update postion
+      update() {
+        console.log(this.y);
         // check check collision
+        for(let enemy of allEnemies) {
+          if (this.y === enemy.y && (enemy.x + enemy.horizontal/2 > this.x && enemy.x < this.x +this.horizontal/2)){
+            this.restart();
+          }
+        }
           // did sprite x & y collide with enemy?
-        // reach the end of game
+        if(this.y === -43){
+          alert('You Won!');
+          this.restart();
+        }// reach the end of game
             // did sprite x & y reach final tile
-
+      }
       //handle keyboard input
         //update sprites x & y according to input
-      // reset player sprite
+      restart() {
+        this.x = this.startX;
+        this.y = this.startY;
+      }// reset player sprite
         // set x & y to starting x & y
-
+}
 
 
 // Now instantiate your objects.
