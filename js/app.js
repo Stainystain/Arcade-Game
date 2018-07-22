@@ -5,6 +5,7 @@ var Enemy = function(x, y, speed) {
     this.y = y + 50;   // y pos
     this.horizontal = 101;    // distance moved each step right
     this.speed = speed;
+    this.startPos = -101;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -21,7 +22,7 @@ Enemy.prototype.update = function(dt) {
       this.x += this.speed * dt;   // move forward - incriment x by speed * dt
     }
     else {
-      this.x = -101;   // reset pos to start
+      this.x = this.startPos;   // reset pos to start
     }
 
 };
@@ -53,7 +54,6 @@ class Character {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
   //update sprites x & y according to input
-  //@param {string} input - direction to travel
   handleInput(input) {
     switch(input){
       case 'left':
@@ -95,12 +95,11 @@ class Character {
 
 
 // Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
 const player = new Character();   // Player character object
 const enemy1 = new Enemy(-101, 0, 150);   // Enemy character object
 const enemy2 = new Enemy(-101, 83, 200);   // Enemy character object
 const enemy3 = new Enemy((-101*1.5), 166, 300);   // Enemy character object
-
+// Place all enemy objects in an array called allEnemies
 const allEnemies = [];
 allEnemies.push(enemy1, enemy2, enemy3);
 
