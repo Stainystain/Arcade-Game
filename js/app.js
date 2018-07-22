@@ -5,7 +5,8 @@ var Enemy = function(x, y, speed) {
     this.y = y + 50;   // y pos
     this.horizontal = 101;    // distance moved each step right
     this.speed = speed;
-    this.startPos = -101;
+    this.startPos = -101;   // enemy start position
+    this.endPos = this.horizontal * 5;    // enemy end position
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -18,7 +19,7 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    if(this.x < this.horizontal * 5){   // if enemny has not passed edge of game canvas
+    if(this.x < this.endPos){   // if enemny has not passed edge of game canvas
       this.x += this.speed * dt;   // move forward - incriment x by speed * dt
     }
     else {
