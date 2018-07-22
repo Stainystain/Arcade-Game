@@ -1,14 +1,13 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // x pos
-    // y pos
+var Enemy = function(x, y, speed) {
+    this.sprite = 'images/enemy-bug.png';   // sprite image
+    this.x = x;   // x pos
+    this.y = y + 50;   // y pos
+    this.horizontal = 101;    // distance moved each step right
+    this.speed = speed;
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
 };
 
 // Update the enemy's position, required method for game
@@ -18,11 +17,12 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    // if enemny has not passed edge of game canvas
-      // move forward
-      // incriment x by speed * dt
-    // else
-      // reset pos to start
+    if(this.x < this.horizontal * 5){   // if enemny has not passed edge of game canvas
+      this.x += this.speed * dt;   // move forward - incriment x by speed * dt
+    }
+    else {
+      this.x = -101;   // reset pos to start
+    }
 
 };
 
@@ -97,6 +97,12 @@ class Character {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 const player = new Character();   // Player character object
+const enemy1 = new Enemy(-101, 0, 150);   // Enemy character object
+const enemy2 = new Enemy(-101, 83, 200);   // Enemy character object
+const enemy3 = new Enemy((-101*1.5), 166, 300);   // Enemy character object
+
+const allEnemies = [];
+allEnemies.push(enemy1, enemy2, enemy3);
 
     // init allEnemies array
     // for each enemy create and push new enemy object into above array
